@@ -1,6 +1,6 @@
 {% set name = "pyslet" %}
-{% set version = "0.5.20140801" %}
-{% set sha256 = "89538ad432d8c51b7d4b419817526f864697580d5eb1471784d15f6c056a88b6" %}
+{% set version = "0.7.20170805" %}
+{% set sha256 = "d4cbb85e16d58a8f990e15e711266ec2fe30a4dc4626c4d839bb7b7824afdf6c" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [py3k]
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
  
 requirements:
