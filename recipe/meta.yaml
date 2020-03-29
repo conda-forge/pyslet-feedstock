@@ -14,7 +14,8 @@ source:
 build:
   skip: True  # [py3k]
   number: 1001
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: build:
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
  
 requirements:
   build:
