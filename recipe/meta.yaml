@@ -15,7 +15,7 @@ build:
   skip: True  # [py3k]
   number: 1001
   script: build:
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: python -m pip install . --no-deps -vv
  
 requirements:
   build:
