@@ -1,6 +1,6 @@
 {% set name = "pyslet" %}
 {% set version = "0.7.20170805" %}
-{% set sha256 = "d4cbb85e16d58a8f990e15e711266ec2fe30a4dc4626c4d839bb7b7824afdf6c" %}
+{% set sha256 = "4f6cce9f60f9dc2543deee311da8b3e678fde3260971f301f4da2d40a4a30a8f" %}
 
 package:
   name: {{ name|lower }}
@@ -8,18 +8,17 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/swl10/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [py3k]
-  number: 1000
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1001
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
  
 requirements:
   build:
     - python
-    - setuptools
+    - pip
 
   run:
     - python
@@ -37,7 +36,7 @@ about:
   home: http://www.pyslet.org/
   license: BSD-3-Clause
   license_family: BSD
-  # license_file:  file is currently unavailable, see https://github.com/swl10/pyslet/issues/64
+  license_file: LICENSE.txt
   summary: 'Pyslet: Python package for Standards in Learning, Education and Training'
   description: |
     Pyslet is a Python package for Standards in Learning Education and Training
