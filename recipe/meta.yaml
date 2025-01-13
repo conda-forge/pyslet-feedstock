@@ -20,6 +20,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
 
   run:
     - python >={{ python_min }}
@@ -27,6 +28,7 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - pip
   imports:
     - pyslet
     - pyslet.http
@@ -34,6 +36,8 @@ test:
     - pyslet.qtiv1
     - pyslet.qtiv2
     - pyslet.xml20081126
+  command:
+    - pip check
 
 about:
   home: http://www.pyslet.org/
