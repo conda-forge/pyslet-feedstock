@@ -36,7 +36,7 @@ test:
     - pyslet.qtiv1
     - pyslet.qtiv2
     - pyslet.xml20081126
-  command:
+  commands:
     - pip check
 
 about:
